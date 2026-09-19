@@ -3,63 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sơ Đồ Lịch Sử & Gia Phả Anh Quốc</title>
+    <title>Tổng Hợp Lịch Sử & Gia Phả Anh Quốc Ôn Thi</title>
     <!-- Thư viện vẽ sơ đồ Mermaid JS -->
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.mmin.mjs';
         mermaid.initialize({ startOnLoad: true, theme: 'default' });
     </script>
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #f1f5f9;
-            margin: 0;
-            padding: 30px;
-            color: #0f172a;
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --primary-color: #1e3a8a;
+            --secondary-color: #0f766e;
+            --text-color: #0f172a;
+            --border-color: #e2e8f0;
+            --accent-color: #b91c1c;
         }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 25px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
+
         h1 {
             text-align: center;
-            color: #1e3a8a;
-            margin-bottom: 10px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 2.2em;
         }
+
         p.desc {
             text-align: center;
             color: #475569;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+            font-weight: 500;
         }
+
         .card {
-            background: #ffffff;
+            background: var(--card-bg);
             border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
         }
+
         h2 {
-            color: #0f766e;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
             margin-top: 0;
+            font-size: 1.5em;
         }
+
         .mermaid {
             display: flex;
             justify-content: center;
             overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        /* Styling for Detailed History Table */
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+
+        .timeline-table th, .timeline-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .timeline-table th {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .timeline-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .year-col {
+            width: 100px;
+            font-weight: bold;
+            color: var(--accent-color);
+            white-space: nowrap;
+        }
+
+        .event-col {
+            width: 250px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .en-term {
+            color: #4338ca;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .highlight-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>👑 TỔNG HỢP ÔN THI LỊCH SỬ ANH QUỐC</h1>
-    <p class="desc">Sơ đồ gia phả & Biến đổi thể chế chính trị (Từ thời Elizabeth I đến hết WW2)</p>
+    <h1>👑 TỔNG HỢP CỐT LÕI LỊCH SỬ ANH QUỐC (ÔN THI)</h1>
+    <p class="desc">Bao gồm: Sơ đồ Biến đổi Thể chế | Sơ đồ Gia phả Hoàng gia | Bảng Chi tiết Sự kiện Tối Quan Trọng</p>
 
     <!-- SƠ ĐỒ 1 -->
     <div class="card">
-        <h2>1. Sơ đồ Cột mốc Biến đổi Thể chế: Từ Quân chủ Tuyệt đối sang Lập hiến</h2>
+        <h2>1. Sơ đồ Biến đổi Thể chế: Từ Quân chủ Tuyệt đối sang Lập hiến</h2>
         <pre class="mermaid">
         graph TD
             classDef absolute fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f;
@@ -139,6 +213,108 @@
                 G6_2 --> E2_2["👑 <b>ELIZABETH II (1952–2022)</b>"]:::windsor
             end
         </pre>
+    </div>
+
+    <!-- PHẦN 3: BẢNG SỰ KIỆN TỐI QUAN TRỌNG (CHI TIẾT MỞ RỘNG) -->
+    <div class="card">
+        <h2>3. Chi Tiết Các Sự Kiện Lịch Sử Tối Quan Trọng (Trọng Tâm Ôn Thi)</h2>
+        <p>Bảng tổng hợp chi tiết các cột mốc bắt buộc phải nhớ khi đi thi Lịch sử Anh Quốc:</p>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th class="year-col">Mốc Năm</th>
+                    <th class="event-col">Tên Sự Kiện / Khái Niệm</th>
+                    <th>Nội Dung Chi Tiết & Tầm Ảnh Hưởng Lịch Sử (Exam Focus)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="year-col">1215</td>
+                    <td class="event-col">Đại Hiến Chương<br/><span class="en-term">(Magna Carta)</span></td>
+                    <td>Vua John bị giới quý tộc ép ký. Đặt ra nguyên tắc lịch sử: <b>Cả Nhà vua cũng phải tuân thủ pháp luật</b> (No one is above the law). Là nền tảng tiên phong cho hiến pháp hiện đại và quyền con người.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1534</td>
+                    <td class="event-col">Cải Cách Tôn Giáo & Đạo Luật Tối Cao<br/><span class="en-term">(English Reformation & Act of Supremacy)</span></td>
+                    <td>Vua Henry VIII tách Giáo hội Anh ra khỏi Công giáo Rome vì Giáo hoàng không chấp thuận cho ông ly hôn. Khai sinh <b>Anh giáo (Church of England)</b>, biến Vua thành người đứng đầu cả Tôn giáo và Quốc gia.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1558 – 1603</td>
+                    <td class="event-col">Thời Kỳ Hoàng Kim Elizabethan<br/><span class="en-term">(Elizabethan Era)</span></td>
+                    <td>Dưới thời Nữ hoàng Elizabeth I, nước Anh trỗi dậy thành thế lực hàng hải sau khi **đánh bại Hạm đội Tây Ban Nha (Spanish Armada 1588)**. Văn hóa & kịch nghệ bùng nổ (thời Shakespeare).</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1605</td>
+                    <td class="event-col">Âm Mưu Thuốc Súng<br/><span class="en-term">(The Gunpowder Plot)</span></td>
+                    <td>Nhóm Công giáo cực đoan do Guy Fawkes cầm đầu âm mưu cho nổ 36 hũ thuốc súng giật sập Quốc hội để sát hại Vua James I. Âm mưu bất thành, ngày <b>5/11</b> trở thành ngày hội <i>Guy Fawkes Night / Bonfire Night</i>.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1642 – 1651</td>
+                    <td class="event-col">Nội Chiến Anh<br/><span class="en-term">(English Civil War)</span></td>
+                    <td>Xung đột giữa phe Hoàng gia (Royalists/Cavaliers) và phe Quốc hội (Parliamentarians/Roundheads). Trận chiến kết thúc với thắng lợi của phe Quốc hội, dẫn tới sự kiện chấn động: **Xử tử Vua Charles I (1649)**.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1653 – 1658</td>
+                    <td class="event-col">Thời Kỳ Bảo Hộ / Nền Cộng Hòa<br/><span class="en-term">(The Protectorate / Commonwealth)</span></td>
+                    <td>Oliver Cromwell cai trị Anh với tư cách <b>Lord Protector (Bảo hộ công)</b>. Đây là khoảng thời gian duy nhất lịch sử Anh không có Vua, bị biến thành chế độ độc tài quân sự nghiêm khắc theo đạo Thanh giáo (Puritanism).</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1660</td>
+                    <td class="event-col">Thời Kỳ Khôi Phục Vương Quyền<br/><span class="en-term">(The Restoration)</span></td>
+                    <td>Sau khi Cromwell mất, người dân chán ngấy độc tài. Quốc hội mời Charles II (con Charles I) trở lại làm vua, khôi phục lại Chế độ Quân chủ Anh.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1688</td>
+                    <td class="event-col">Cách Mạng Vinh Quang<br/><span class="en-term">(The Glorious Revolution)</span></td>
+                    <td>Cuộc phế xổm Vua James II (theo Công giáo) không tốn máu. Quốc hội mời con gái ông là Mary II và chồng William III xứ Orange (theo Tin Lành) sang nắm ngai vàng.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1689</td>
+                    <td class="event-col">Tuyên Ngôn Nhân Quyền<br/><span class="en-term">(Bill of Rights 1689)</span></td>
+                    <td>Cột mốc vĩ đại nhất: Buộc Vua phải chia sẻ quyền lực, xác lập quyền tối cao của Quốc hội. Nước Anh chính thức chuyển thành chế độ **Quân chủ Lập hiến (Constitutional Monarchy)**.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1707</td>
+                    <td class="event-col">Đạo Luật Hợp Nhất 1707<br/><span class="en-term">(Act of Union 1707)</span></td>
+                    <td>Sáp nhập Vương quốc Anh và Vương quốc Scotland thành một quốc gia thống nhất: **Vương quốc Đại Anh (Kingdom of Great Britain)** dưới thời Nữ hoàng Anne.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1721</td>
+                    <td class="event-col">Thủ Tướng Đầu Tiên Ra Đời<br/><span class="en-term">(First Prime Minister)</span></td>
+                    <td>Vì Vua George I (người Đức) không biết tiếng Anh nên không tham dự họp Nội các. <b>Sir Robert Walpole</b> trở thành người đứng đầu Nội các, là vị Thủ tướng thực tế đầu tiên của Anh. Mở ra kỷ nguyên *"Vua trị vì nhưng không cai trị"*.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">Giữa TK 18 – TK 19</td>
+                    <td class="event-col">Cách Mạng Công Nghiệp<br/><span class="en-term">(Industrial Revolution)</span></td>
+                    <td>Nước Anh bùng nổ động cơ hơi nước, nhà máy dệt, đường sắt. Anh trỗi dậy thành siêu cường kinh tế số 1 thế giới với biệt danh **"Công xưởng của Thế giới" (Workshop of the World)**.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1837 – 1901</td>
+                    <td class="event-col">Thời Kỳ Victoria<br/><span class="en-term">(Victorian Era)</span></td>
+                    <td>Nữ hoàng Victoria cai trị 63 năm. Đế quốc Anh mở rộng đỉnh điểm *"Mặt trời không bao giờ lặn trên Đế quốc Anh"*, chiếm 1/4 diện tích thế giới. Victoria trở thành "Bà ngoại của Châu Âu" qua mạng lưới hôn nhân hoàng gia.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1914 – 1918</td>
+                    <td class="event-col">Chiến Tranh Thế Giới Thứ Nhất<br/><span class="en-term">(World War I / Great War)</span></td>
+                    <td>Xung đột đẫm máu giữa các đế quốc. Năm **1917**, Vua George V quyết định đổi tên dòng họ từ Saxe-Coburg and Gotha (gốc Đức) thành **House of Windsor** để xoa dịu làn sóng bài Đức của dân chúng.</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1939 – 1945</td>
+                    <td class="event-col">Chiến Tranh Thế Giới Thứ Hai & Sự Suy Tàn Của Đế Quốc<br/><span class="en-term">(World War II & Empire Decolonization)</span></td>
+                    <td>Thủ tướng **Winston Churchill** cùng Vua George VI lãnh đạo nước Anh kiên cường chống trả Đức Quốc Xã (Trận chiến Trận không chiến Trận chiến nước Anh - *Battle of Britain 1940*). Sau chiến tranh, Anh thắng trận nhưng kiệt quệ kinh tế, dẫn đến sự tan rã của Đế chế và hình thành **Khối Thịnh vượng chung (The Commonwealth)**.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box">
+            <b>💡 Mẹo ghi điểm bài thi (Exam Tip):</b>
+            <ul>
+                <li>Nhớ kỹ cụm từ <b>Constitutional Monarchy</b> luôn gắn liền với <b>Bill of Rights (1689)</b>.</li>
+                <li>Phân biệt rõ <b>Great Britain (1707)</b> = Anh + Scotland và <b>United Kingdom (1801)</b> = Great Britain + Ireland.</li>
+                <li>Người đặt nền móng cho chức danh Thủ tướng Anh là <b>Sir Robert Walpole (1721)</b>.</li>
+            </ul>
+        </div>
     </div>
 </div>
 
