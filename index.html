@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sơ Đồ Lịch Sử & Gia Phả Anh Quốc</title>
+    <!-- Thư viện vẽ sơ đồ Mermaid JS -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.mmin.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 30px;
+            color: #0f172a;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+        p.desc {
+            text-align: center;
+            color: #475569;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0f766e;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>👑 TỔNG HỢP ÔN THI LỊCH SỬ ANH QUỐC</h1>
+    <p class="desc">Sơ đồ gia phả & Biến đổi thể chế chính trị (Từ thời Elizabeth I đến hết WW2)</p>
+
+    <!-- SƠ ĐỒ 1 -->
+    <div class="card">
+        <h2>1. Sơ đồ Cột mốc Biến đổi Thể chế: Từ Quân chủ Tuyệt đối sang Lập hiến</h2>
+        <pre class="mermaid">
+        graph TD
+            classDef absolute fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f;
+            classDef conflict fill:#fce7f3,stroke:#be185d,stroke-width:2px,color:#831843;
+            classDef civilwar fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b;
+            classDef republic fill:#f3f4f6,stroke:#4b5563,stroke-width:2px,color:#111827;
+            classDef constitutional fill:#dcfce7,stroke:#15803d,stroke-width:2px,color:#14532d;
+            classDef cabinet fill:#e0e7ff,stroke:#4338ca,stroke-width:2px,color:#1e1b4b;
+
+            subgraph TUDOR_ABSOLUTISM ["👑 QUÂN CHỦ TUYỆT ĐỐI THỜI TUDOR"]
+                H8["<b>HENRY VIII (1509–1547)</b><br/>🔹 1534: Act of Supremacy<br/>🔹 Lập Anh giáo (Church of England)"]:::absolute
+                H8 --> E1["<b>ELIZABETH I (1558–1603)</b><br/>🔹 1559: Elizabethan Religious Settlement<br/>🔹 Củng cố Đặc quyền Vương quyền"]:::absolute
+            end
+
+            subgraph STUART_CONFLICT ["⚔️ MÂU THUẪN HOÀNG GIA vs QUỐC HỘI"]
+                E1 -.-> J1["<b>JAMES I (1603–1625)</b><br/>🔹 Thuyết Divine Right of Kings<br/>💥 1605: Gunpowder Plot"]:::conflict
+                J1 --> C1["<b>CHARLES I (1625–1649)</b><br/>🏛️ 11 Years Tyranny (Giải tán Quốc hội 11 năm)<br/>💥 Tự ý áp thuế trái phép"]:::conflict
+            end
+
+            subgraph CIVIL_WAR_ERA ["💣 NỘI CHIẾN & NỀN CỘNG HOÀ"]
+                C1 --> WAR["⚔️ <b>ENGLISH CIVIL WAR (1642–1651)</b><br/>Royalists (Phe Vua) vs Parliamentarians (Phe Quốc hội)"]:::civilwar
+                WAR --> EXEC["🪓 <b>1649: TRẢM QUYẾT CHARLES I</b>"]:::civilwar
+                EXEC --> CWELL["<b>OLIVER CROMWELL (1653–1658)</b><br/>🏛️ Commonwealth of England (Nền Cộng hòa)<br/>🛡️ Lord Protector (Độc tài quân sự)"]:::republic
+            end
+
+            subgraph RESTORATION_GLORIOUS ["📜 KHÔI PHỤC HOÀNG GIA & CÁCH MẠNG VINH QUANG"]
+                CWELL -.-> C2["<b>CHARLES II (1660–1685)</b><br/>🔹 The Restoration (Khôi phục Hoàng gia)"]:::conflict
+                C2 --> J2["<b>JAMES II (1685–1688)</b><br/>✝️ Vua Công giáo, muốn tái lập Quân chủ Tuyệt đối"]:::conflict
+                J2 --> REV["👑 <b>GLORIOUS REVOLUTION (1688)</b><br/>Cách mạng Vinh quang (Không tốn máu)"]:::constitutional
+            end
+
+            subgraph CONSTITUTIONAL_ERA ["🏛️ QUÂN CHỦ LẬP HIẾN & CHÍNH PHỦ"]
+                REV --> BOR["📜 <b>BILL OF RIGHTS (1689)</b><br/>🏛️ Khai sinh Quân chủ Lập hiến (Quốc hội đứng trên Vua)"]:::constitutional
+                BOR --> ACT1701["📜 <b>Act of Settlement (1701)</b><br/>Chỉ người Tin Lành mới được kế vị"]:::constitutional
+                ACT1701 --> HANOVER["👑 <b>GEORGE I (1714–1727)</b><br/>🔹 Vua Đức, không thạo tiếng Anh"]:::cabinet
+                HANOVER --> PM["🏛️ <b>RA ĐỜI CHÍNH PHỦ & THỦ TƯỚNG (1721)</b><br/>👤 <b>Sir Robert Walpole</b> - Thủ tướng đầu tiên<br/>⚖️ Mô hình: Vua trị vì nhưng không cai trị"]:::cabinet
+            end
+        </pre>
+    </div>
+
+    <!-- SƠ ĐỒ 2 -->
+    <div class="card">
+        <h2>2. Sơ đồ Gia phả Hoàng gia: Từ Elizabeth I đến Chiến tranh Thế giới thứ 2</h2>
+        <pre class="mermaid">
+        graph TD
+            classDef tudor fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f;
+            classDef stuart fill:#e0e7ff,stroke:#4338ca,stroke-width:2px,color:#1e1b4b;
+            classDef hanover fill:#fce7f3,stroke:#be185d,stroke-width:2px,color:#831843;
+            classDef windsor fill:#dcfce7,stroke:#15803d,stroke-width:2px,color:#14532d;
+
+            subgraph TUDOR_ERA ["👑 HOUSE OF TUDOR"]
+                E1_2["<b>ELIZABETH I (1558–1603)</b><br/>❌ Không có con nối dõi"]:::tudor
+            end
+
+            subgraph STUART_ERA ["🏰 HOUSE OF STUART"]
+                J1_2["<b>JAMES I (1603–1625)</b><br/>🔹 Union of the Crowns"]:::stuart
+                J1_2 --> C1_2["<b>CHARLES I (1625–1649)</b>"]:::stuart
+                C1_2 --> C2_2["<b>CHARLES II</b>"]:::stuart
+                C1_2 --> J2_2["<b>JAMES II</b>"]:::stuart
+                J2_2 --> M2_2["<b>MARY II & William III</b>"]:::stuart
+                J2_2 --> ANNE_2["<b>QUEEN ANNE (1702–1714)</b><br/>📜 1707: Act of Union (Great Britain)"]:::stuart
+            end
+
+            E1_2 -.-> J1_2
+
+            subgraph HANOVER_ERA ["🦁 HOUSE OF HANOVER"]
+                ANNE_2 -.-> G1_2["<b>GEORGE I (1714–1727)</b>"]:::hanover
+                G1_2 --> G2_2["<b>GEORGE II</b>"]:::hanover
+                G2_2 --> G3_2["<b>GEORGE III (1760–1820)</b><br/>📜 1801: Act of Union (UK)<br/>⚔️ 1815: Thắng Napoleon ở Waterloo"]:::hanover
+                G3_2 --> VIC_2["👑 <b>QUEEN VICTORIA (1837–1901)</b><br/>⚙️ Industrial Revolution ('Workshop of the World')<br/>🌍 'Grandmother of Europe'"]:::hanover
+            end
+
+            subgraph WINDSOR_ERA ["🛡️ HOUSE OF WINDSOR & WORLD WARS"]
+                VIC_2 --> E7_2["EDWARD VII (1901–1910)"]:::windsor
+                E7_2 --> G5_2["<b>GEORGE V (1910–1936)</b><br/>💣 1914–1918: WORLD WAR I<br/>🔄 1917: Đổi tên họ sang <b>WINDSOR</b>"]:::windsor
+                G5_2 --> G6_2["<b>GEORGE VI (1936–1952)</b><br/>💥 1939–1945: WORLD WAR II<br/>🗣️ Lãnh đạo tinh thần cùng <b>Winston Churchill</b>"]:::windsor
+                G6_2 --> E2_2["👑 <b>ELIZABETH II (1952–2022)</b>"]:::windsor
+            end
+        </pre>
+    </div>
+</div>
+
+</body>
+</html>
